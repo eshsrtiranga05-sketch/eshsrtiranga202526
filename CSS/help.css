@@ -1,0 +1,296 @@
+@font-face{
+  font-family:P-Light;
+  src: url('https://eshsrtiranga.github.io/fonts/Poppins-Light.woff') format('woff');
+}
+
+@keyframes fadeIn {
+            0% {opacity: 0;}
+            from{
+
+              transform: translateY(100px);
+
+            }
+
+            to{
+
+              transform: translateY(0px);
+
+            }
+            100% {opacity: 1;}
+         }
+
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    /* color: #361106; */
+    font-family: P-Light;
+}
+html, body {
+  scroll-behavior: smooth;
+  background-color: rgb(255, 237, 215);
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: P-Light;
+}
+
+/* Start Animation */
+@keyframes starta {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+h1,
+.first a,
+.col {
+  animation: starta 3s;
+}
+
+/* #region MAIN HEADER */
+.first {
+  width: 100%;
+  height: 20vw;
+  background-color: #361106;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.first h1 {
+    color: rgb(255, 237, 215);
+  padding-top: 5%;
+  font-size: 7.2vw;
+  margin-bottom: 3%;
+}
+
+.first a {
+  font-size: 4vw;
+  transition: 0.4s;
+  text-decoration: none;
+  color: black;
+  border: green solid .1vw;
+  padding: .9vw 2vw;
+  border-radius: 2.2vw;
+
+}
+
+.first a:hover {
+  background-color: rgb(255, 237, 215);
+  color: whitesmoke;
+  transition: 0.4s;
+}
+/* #endregion */
+
+/* #region FAQS */
+.container {
+  margin-left: 18%;
+  margin-left: 18%;
+  padding: 6.4vw;
+  padding-top: 10vw;
+  width: 50%;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 5vw;
+  padding-bottom: 5%;
+  font-weight: 600;
+  color: #361106;
+}
+
+.accordion a {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  padding: 3rem 3rem 1rem 0rem;
+  color: #361106bf;
+  font-size: 2.5vw;
+  font-weight: 600;
+  border-bottom: .1vw solid #361106bf;
+  transition: 1s;
+  float:center;
+}
+.accordion a:hover,
+.accordion a:hover::after {
+  cursor: pointer;
+  color: #361106;
+  border-bottom: .1vw solid #361106;
+  transition: 0.3s;
+}
+.accordion a:hover::after {
+  border: .1vw solid #361106;
+  transition: 0.3s;
+}
+.accordion a.active {
+  color: #361106;
+  border-bottom: .1vw solid #361106;
+}
+.accordion .content {
+  opacity: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  clear: both;
+  -webkit-transition: all 0.2s ease 0.15s;
+  -o-transition: all 0.2s ease 0.15s;
+  transition: all 0.2s ease 0.15s;
+}
+.accordion .content p {
+  font-size: 2.5vw;
+  font-weight: 600;
+}
+
+.accordion .content.active {
+  opacity: 1;
+  padding-top: 1rem;
+  color: #361106;
+  max-height: 100%;
+  -webkit-transition: all 0.35s ease 0.15s;
+  -o-transition: all 0.35s ease 0.15s;
+  transition: all 0.35s ease 0.15s;
+}
+/* #endregion */
+
+/* #region GO TO FORM PAGE DESIGN */
+.form {
+  margin: 0px auto;
+  margin-top: 10vw;
+  box-shadow: 1vw 1vw 5vw rgba(255, 150, 241, 0.274);
+  width: 80%;
+  background-color: #361106;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  border-radius: 1vw;
+  text-align: center;
+  padding: 10vw 0;
+}
+
+.form h1 {
+  font-size: 5.2vw;
+  color: rgb(255, 237, 215);
+  margin-bottom: 4vw;
+  padding: 0;
+}
+
+.form a {
+  font-size: 1.8vw;
+  transition: 0.4s;
+  text-decoration: none;
+  color: rgb(255, 237, 215);
+  border: rgb(255, 237, 215) solid .1vw;
+  padding: .9vw 2vw;
+  border-radius: 2.2vw;
+  transition: 0.4s;
+  animation: fadeIn 1s;
+
+}
+
+.form a:hover {
+  background-color: #feecd6;
+  color: #361106;
+
+}
+
+
+/*
+@media (max-width: 700px) {
+  .form {
+    padding: 5vw 0;
+  }
+
+  .form h1 {
+    font-size: 2.5vw;
+  }
+
+  .form a {
+    font-size: 1.3vw;
+  }
+}
+
+*/
+/* #endregion */
+
+/* Ipad */
+
+/*
+@media (max-width: 1450px) {
+  .first {
+    height: 40vw;
+  }
+
+  .first h1 {
+    font-size: 5.3vw;
+    padding-top: 11vw;
+    padding-bottom: 2%;
+  }
+
+  .first a {
+    font-size: 2.3vw;
+  }
+
+  .container {
+    width: 100%;
+    padding: 4rem;
+  }
+
+}
+*/
+
+
+/* Phone */
+
+/*
+@media (max-width: 750px) {
+  .first {
+    height: 40vh;
+  }
+
+  .first h1 {
+    font-size: 2.8vw;
+    padding-top: 25%;
+    padding-bottom: 2%;
+  }
+
+  .first a {
+    font-size: 1.3vw;
+
+  }
+
+  .container {
+    width: 100%;
+    padding: 4rem;
+  }
+
+  .container h2 {
+    padding-top: 20%;
+    font-size: 2.5vw;
+  }
+
+  .container a {
+    font-size: 1.7vw;
+  }
+
+}
+
+*/

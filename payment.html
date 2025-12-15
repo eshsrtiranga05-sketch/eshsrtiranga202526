@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel = "icon" href = "Resources/Images/eurologo.png">
+	<link rel = "stylesheet" href = "CSS/reg.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+	
+	<style>
+	@keyframes fadeIn {
+	0% {opacity: 0;}
+	from{
+
+		transform: translateY(100px);
+
+	}
+
+	to{
+
+		transform: translateY(0px);
+
+	}
+	100% {opacity: 1;}
+	}
+
+
+
+	body{
+		background-image: url("https://eshsrtiranga.github.io/Resources/Images/taj-mahal-agra-india.jpg");
+	}
+
+	.Transaction{
+		text-align: center;
+		display: inline;
+		width: 25vw;
+		margin-top: 2vw;
+		margin-bottom: 1vw;
+		outline: none;
+		border-radius: 4vw;
+		background: transparent;
+		padding: 1vw;
+		font-size: 1.3vw;
+		color: white;
+		animation: fadeIn 1.5s;
+	}
+
+	.qrcode{
+		display:inline-block;
+		overflow: hidden;
+		pointer-events: all;
+		cursor:pointer;
+		user-select: all;
+		background-color: white;
+		padding:2vw;
+	}
+
+	@media (max-width:840px){
+		
+		.logo{
+			width:15vw;
+			height:15vw;
+		}
+		
+		.subhead{
+			font-weight: normal;
+		}
+		
+		.name{
+			font-size: 7vw;
+		}
+		.link{
+			font-size: medium;
+			font-weight: normal;
+			font-color: white;
+		}
+		
+		.Transaction{
+			font-size:3vw;
+			width: 40vw;
+			height:5vw;
+		}
+		
+		.submitbutton{
+			width: 16vw;
+			font-size: 2vw;
+			height:6vw;
+		}
+
+		.qrcode{
+			padding: 2vw;
+		}
+	}
+	</style>
+
+
+	<title>Register</title>
+</head>
+
+<body class="page">
+
+	<div class="centre">
+
+		<div>
+
+			<img src="https://eurolitfest.github.io/Home/images/logo.png" class="logo">
+
+		</div>
+
+		<h1 class="name">Payment</h1>
+	        <h3 class="subhead">Kindly scan the QR code for payment and once the transaction is successful, enter the transaction ID and register.</h3>
+
+		<form method="POST" name="submit-to-google-sheet">
+
+			<div>
+				<div class="qrcode" id="qrcode">
+				</div>
+				<br>
+				<h2> OR </h2>
+				<a href = "upi://pay?pn=EuroSchool HSR&pa=s.muniraj009-1@okhdfcbank&cu=INR&am=" id ="Link"><p class = "link">Click Here To Pay Through Mobile</p></a>
+				<p id = "Cost">Cost: </p>
+				
+				<p id = "Events">Number of Events chosen: </p>
+				<input id = "Transaction" placeholder="Transaction ID" type="Text" name="Transaction ID" class="Transaction" required>
+
+
+			</div>
+
+			<div>
+				
+
+ 				<button class="submitbutton" name="submit" type="submit">Register</button>
+
+
+		</form>
+		
+	</div>
+
+	<script>
+        
+    </script>
+
+	<script>
+
+		let name = localStorage.getItem("name");
+			let address = localStorage.getItem("address");
+			let number = localStorage.getItem("number");
+			let email = localStorage.getItem("email");
+			let events1 = JSON.parse(localStorage.getItem("events1"));
+			let events2 = JSON.parse(localStorage.getItem("events2"));
+			let events3 = JSON.parse(localStorage.getItem("events3"));
+			let events4 = JSON.parse(localStorage.getItem("events4"));
+			let events5 = JSON.parse(localStorage.getItem("events5"));
+			let events6 = JSON.parse(localStorage.getItem("events6"));
+
+			if(name == null)
+				window.location = "/"
+
+			let cost = 0;
+			let nevents = 0;
+
+			for(var key in events1)
+			{
+				if(events1[key] == true && key =="C1PD")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events1[key] == true && key =="C1PR")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events1[key] == true && key =="C1RR")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events1[key] == true && key =="C1DD")
+				{
+				cost += 100;
+				nevents++;
+				}
+			}
+			for(var key in events2)
+			{
+				if(events2[key] == true && key =="C2DT")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events2[key] == true && key =="C2BW")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events2[key] == true && key =="C2SS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events2[key] == true && key =="C2ST")
+				{
+				cost += 100;
+				nevents++;
+				}
+			}
+			for(var key in events3)
+			{
+				if(events3[key] == true && key =="C3SMM")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3BOW")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3PM")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3D")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3SOS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3PS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3FP")
+				{
+				cost += 100;
+				nevents++;
+				}
+			}
+			for(var key in events4)
+			{
+				if(events4[key] == true && key =="C4WM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4MM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4PM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4D")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4SS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4PS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4FP")
+				{
+				cost += 100;
+				nevents++;
+				}
+			}
+			for(var key in events5)
+			{
+				if(events5[key] == true && key =="C5WM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5MM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5MaM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5D")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5JAM")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5SS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5Q")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5HTP")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5ST")
+				{
+				cost += 200;
+				nevents++;
+				}
+			}
+			for(var key in events6)
+			{
+				if(events6[key] == true && key != "C6WAI")
+				{
+				cost+=350;
+				nevents++;
+				}
+				if(events6[key] == true && key == "C6WAI")
+				{
+				cost+=200;
+				nevents++;
+				}
+			}
+// text: "upi://pay?pn=EuroSchool HSR&pa=s.muniraj009-1@okhdfcbank&cu=INR&am="+cost,
+			var qrcode = new QRCode("qrcode",{
+			text: "upi://pay?pa=dhanuktp@okaxis&pn=Dhanunjaya%20Pasupuleti&aid=uGICAgIDwl_jIXw&am="+cost,
+			width: screen.width>412?412:screen.width-(screen.width/5),
+			height: screen.width>412?412:screen.width-(screen.width/5),
+			colorDark : "#000000",
+			colorLight : "#ffffff",
+			correctLevel : QRCode.CorrectLevel.H,
+			}
+			);
+
+			let costPara = document.getElementById("Cost");
+			let eventsPara = document.getElementById("Events")
+			let linkPara = document.getElementById("Link")
+
+			costPara.innerHTML = "Cost: Rs."+cost;
+			eventsPara.innerHTML = "Number of events chosen: "+nevents
+			linkPara.href = "upi://pay?pa=dhanuktp@okaxis&pn=Dhanunjaya%20Pasupuleti&aid=uGICAgIDwl_jIXw&am="+cost;
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzslVLM7m-Efftn6rxMt3Xr8oNEVzkgJbcyFacIaaSl68uzdTGiOhGRW9WFHgGbAzAq-g/exec'
+            const form = document.forms['submit-to-google-sheet']
+          
+            form.addEventListener ('submit', e => {
+              e.preventDefault()
+			  localStorage.setItem("Transaction ID",(document.getElementById("Transaction").value));
+              window.location = "success"
+            })
+          </script>
+
+</body>
+
+</html>

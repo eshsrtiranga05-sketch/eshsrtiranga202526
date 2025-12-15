@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you!</title>
+    <link rel="icon" href="Resources/Images/eurologo.png">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <style>
+      @font-face{
+        font-family:P-Light;
+        src: url('https://eshsrtiranga.github.io/fonts/Poppins-Light.woff') format('woff');
+      }
+
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+        url("https://eshsrtiranga.github.io/Resources/Images/flagrun.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        font-family: P-Light;
+        color: rgb(255, 237, 215);
+      }
+      @keyframes starta {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .main {
+        animation: starta 3000ms;
+        margin: auto;
+        width: 85%;
+        position: absolute;
+        top: 21%;
+        left: 7.5%;
+        background-color: transparent;
+        border-radius: 10px;
+        text-align: center;
+        padding: 40px 0;
+        /* box-shadow: 10px 10px 50px rgba(160, 160, 160, 0.384); */
+      }
+
+      .main h1 {
+        font-size: 52px;
+        margin-top: 20px;
+        margin-bottom: 5%;
+      }
+
+      .main h3 {
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 40px;
+      }
+
+      .main a {
+        font-size: 18px;
+        transition: 0.4s;
+        text-decoration: none;
+        color: rgb(255, 237, 215);
+        border: rgb(255, 237, 215) solid 1px;
+        padding: 9px 20px;
+        border-radius: 22px;
+      }
+
+      .main a:hover {
+        background-color: rgb(255, 237, 215);
+        color: #5b2b0b;
+        transition: 0.4s;
+      }
+      /* #endregion */
+
+      @media (max-width: 700px) {
+        body {
+          background-size: cover;
+        }
+        .main {
+          top: 18vh;
+        }
+
+        .main h1 {
+          font-size: 28px;
+        }
+
+        .main h2 {
+          padding: 10px;
+          margin-right: 5px;
+          margin-left: 5px;
+          font-size: 20px;
+        }
+
+        .main h3 {
+          font-size: 15px;
+        }
+
+        .main a {
+          font-size: 13px;
+        }
+      }
+    </style>
+
+
+  </head>
+  <body>
+
+    
+    
+    <script>
+      let name = localStorage.getItem("name");
+      let address = localStorage.getItem("address");
+      let number = localStorage.getItem("number");
+      let email = localStorage.getItem("email");
+      let events1 = JSON.parse(localStorage.getItem("events1"));
+      let events2 = JSON.parse(localStorage.getItem("events2"));
+      let events3 = JSON.parse(localStorage.getItem("events3"));
+      let events4 = JSON.parse(localStorage.getItem("events4"));
+      let events5 = JSON.parse(localStorage.getItem("events5"));
+      let events6 = JSON.parse(localStorage.getItem("events6"));
+      let transactionID = localStorage.getItem("Transaction ID");
+      
+      let cost = 0;
+			let nevents = 0;
+
+			for(var key in events1)
+			{
+				if(events1[key] == true && key =="C1PD")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events1[key] == true && key =="C1PR")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events1[key] == true && key =="C1RR")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events1[key] == true && key =="C1DD")
+				{
+				cost += 100;
+				nevents++;
+				}
+			}
+			for(var key in events2)
+			{
+				if(events2[key] == true && key =="C2DT")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events2[key] == true && key =="C2BW")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events2[key] == true && key =="C2SS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events2[key] == true && key =="C2ST")
+				{
+				cost += 100;
+				nevents++;
+				}
+			}
+			for(var key in events3)
+			{
+				if(events3[key] == true && key =="C3SMM")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3BOW")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3PM")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3D")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3SOS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3PS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events3[key] == true && key =="C3FP")
+				{
+				cost += 100;
+				nevents++;
+				}
+			}
+			for(var key in events4)
+			{
+				if(events4[key] == true && key =="C4WM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4MM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4PM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4D")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4SS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4PS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events4[key] == true && key =="C4FP")
+				{
+				cost += 100;
+				nevents++;
+				}
+			}
+			for(var key in events5)
+			{
+				if(events5[key] == true && key =="C5WM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5MM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5MaM")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5D")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5JAM")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5SS")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5Q")
+				{
+				cost += 200;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5HTP")
+				{
+				cost += 100;
+				nevents++;
+				}
+				if(events5[key] == true && key =="C5ST")
+				{
+				cost += 200;
+				nevents++;
+				}
+			}
+			for(var key in events6)
+			{
+				if(events6[key] == true && key == "C6D")
+				{
+				cost+=350;
+				nevents++;
+				}
+				if(events6[key] == true && key == "C6B")
+				{
+				cost+=350;
+				nevents++;
+				}
+			}
+      
+      var events1Dict = {C1DD:"Star Style Showdown", C1PD:"Flaunt and Express"}
+      var events2Dict = {C1PR:"Soul Speaks", C1RR:"Book Binge"}
+      var events3Dict = {C2DT:"The Story Teller's Realm",C2BW:"Bin To Brilliance",C2SS:"Songster",C2ST:"A Thought Bubble"}
+      var events4Dict = {C4MM:"Fire Works of Freedom",C4PM:"Poster Palete",C4D:"Rhythm Rumble",C4SS:"Unplugged Voices",C4PS:"Choose and Voice",C4FP:"Face Flora"}
+      var events5Dict = {C5WM:"Enviro Heal",C5MM:"Celluloid",C5MaM:"Flash Ad",C5D:"Gladiatorial Combat",C5JAM:"Minute Marvels",C5S:"Harmonise your Solo",C5Q:"Quizzy Quest",C5HTP:"Markup Madness",C5ST:"Venture Vault"}
+      var events6Dict = {C6D:"Swirl and Twirls",C6B:"Sovereignity Symphony"}
+
+
+      if(transactionID == null)
+        window.location = "/"
+      else
+      {
+          formData = new FormData();
+          formData.append("School Name",name);
+          formData.append("Address",address);
+          formData.append("Mobile Number",number);
+          formData.append("Email",email);
+          formData.append("No. of Events", nevents);
+          formData.append("Total Cost", cost);
+          formData.append("Transaction ID", transactionID);
+
+          for(var key in events1)
+          {
+            if(events1[key] == true)
+              formData.append(events1Dict[key], "Yes")
+          }
+          for(var key in events2)
+          {
+            if(events2[key] == true)
+              formData.append(events2Dict[key], "Yes")
+          }
+          for(var key in events3)
+          {
+            if(events3[key] == true)
+              formData.append(events3Dict[key], "Yes")
+          }
+          for(var key in events4)
+          {
+            if(events4[key] == true)
+              formData.append(events4Dict[key], "Yes")
+          }
+          for(var key in events5)
+          {
+            if(events5[key] == true)
+              formData.append(events5Dict[key], "Yes")
+          }
+          for(var key in events6)
+          {
+            if(events6[key] == true)
+              formData.append(events6Dict[key], "Yes")
+          }
+
+      }
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzslVLM7m-Efftn6rxMt3Xr8oNEVzkgJbcyFacIaaSl68uzdTGiOhGRW9WFHgGbAzAq-g/exec'
+	    const form = document.forms['submit-to-google-sheet']
+	     fetch(scriptURL, { method: 'POST', body: formData})
+                localStorage.setItem("Transaction ID",(document.getElementById("Transaction").value));
+      localStorage.clear()
+
+
+    </script>
+
+
+    <div class="main">
+      <h1>Thank You for registering!</h1>
+      <a href="/tiranga2024.github.io">Regirster for more</a>
+    </div>
+
+    
+
+  </body>
+</html>
+

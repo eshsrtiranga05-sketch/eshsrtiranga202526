@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/common.css">
+    <link rel="stylesheet" href="CSS/help.css">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" href="Resources/Images/eurologo.png">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <title>Contact us</title>
+  </head>
+  <body>
+    
+    <div class="sidebar">
+      <div class="logo-details">
+        
+        <div class="logo_name">ESHSR Tiranga</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="index.html" class="link">
+            <i class="bx bx-envelope-open"></i>
+            <span class="links_name">Register</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.google.com/presentation/d/1UWsHsnuQ-4LU7eCYTS5xhPUomgjiBfxq/edit?usp=sharing&ouid=112961333319649154689&rtpof=true&sd=true" class="link">
+            <i class="bx bx-calendar"></i>
+            <span class="links_name">Events</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="link">
+            <i class="bx bx-question-mark"></i>
+            <span class="links_name">Contact us</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="first" id="first">
+      <h1>Contact us</h1>
+    </section>
+    
+    <div class="container" id="section2">
+      <div class="accordion">
+        <div class="accordion-item">
+          <a>Divya A T</a>
+          <div class="content">
+            <p>
+            +91 7208965938
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <a>Aisha</a>
+          <div class="content">
+            <p>
+            +91 98415158608
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <a>Asha Suresh</a>
+          <div class="content">
+            <p>
+            +91 9980129437
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Javascript for collapsing and expanding faqs -->
+    <script>
+      const items = document.querySelectorAll(".accordion a");
+
+      function toggleAccordion() {
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("active");
+      }
+
+      items.forEach((item) => item.addEventListener("click", toggleAccordion));
+      var heading = document.getElementById("head");
+
+      let sidebar = document.querySelector(".sidebar");
+      let closeBtn = document.querySelector("#btn");
+      let links = document.getElementsByClassName("link");
+      let list_items = document.getElementsByTagName("li");
+      const links_array = Array.from(links);
+      const array_list_items = Array.from(list_items);
+
+      window.onload = remove_links;
+
+      function remove_links() {
+        links_array.forEach((element) => {
+          element.remove();
+        });
+        // console.log("removed links");
+      }
+
+      function addlinks() {
+        var counter = 0;
+
+        array_list_items.forEach((element) => {
+          element.appendChild(links_array[counter]);
+          counter += 1;
+        });
+
+        // console.log("added links");
+      }
+
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();
+      });
+
+      function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+          addlinks();
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+          remove_links();
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <section class="form" id="form">
+      <h1>Register Here!</h1>
+      <a href="index.html">Register</a>
+    </section>
+
+    <section class="footer">
+    </section>
+
+    <script type="text/javascript">
+      function sendEmail() {
+        Email.send({
+        Host: "smtp.gmail.com",
+        Username : "<sender’s email address>",
+        Password : "<email password>",
+        To : '<recipient’s email address>',
+        From : "<sender’s email address>",
+        Subject : "<email subject>",
+        Body : "<email body>",
+        }).then(
+          message => alert("mail sent successfully")
+        );
+      }
+  </script>
+
+<button onclick="">
+
+  </body>
+</html>
